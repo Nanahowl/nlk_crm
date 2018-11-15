@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.isoft.crm.dao.LoginDao">
+
+	<select id="getUserSession" resultType="com.isoft.crm.bean.UserSession">
+		select user.id,
+		user.login_name as loginName,
+		user.login_pwd as loginPwd,
+		user.role_id as roleId,
+		user.name,
+		user.status,
+		user.department_id as departmentId,
+		user.job_id as jobId,
+		job.name as jobName
+		from comp_user user
+		left join comp_job job on user.job_id = job.id
+		left join comp_department depart on user.department_id = depart.id
+		left join comp_role role on user.role_id = role.id
+		where user.login_name = #{loginName}
+		and user.login_pwd = #{upwd}
+	</select>
+	<select id="findParentMenuModelByRoleId" resultType="com.isoft.crm.bean.MenuBean">
+		select fu.id,fu.name,fu.url
+		from comp_role_function rf
+		left join comp_function fu on fu.id = rf.function_id
+		where rf.role_id = #{roleId}
+		order by fu.order_num;
+		
+	</select>
+	
+	<select id="getFunctionIdsByRoleId" resultType="Integer">
+		select function_id
+		from comp_role_function
+		where role_id = #{roleId}
+	
+	</select>
+	
+	<select id="findChildMenuRoleIdAndMenuId" resultType="com.isoft.crm.bean.MenuBean">
+		select fu.id,fu.name,fu.url
+		from comp_role_function rf
+		left join comp_function fu on fu.id = rf.function_id
+		where rf.role_id = #{roleId}
+		and fu.parent_id = #{functionId}
+		order by fu.order_num;
+	
+	</select>
+</mapper>

@@ -1,0 +1,28 @@
+html { height:100%; }
+body { margin:0 auto; font-size:12px; line-height:24px; color:#666; background:url(../images/login_bg.jpg) center 50% no-repeat #1e6eaa;}
+ul,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,p { margin:0; padding:0;}
+ul { list-style:none; margin:0; padding:0;}
+img { border:0px;}
+a { color:#444444; text-decoration:none;}
+a:hover { color:#ff3300; text-decoration:underline;}
+/*清除浮动*/
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfloat { overflow:hidden; _height:1%}
+
+.fl_left { float:left;}
+.fl_right { float:right;}
+
+#login { width:360px; position:absolute; top:50%; left:50%; margin-top:-130px; margin-left:-180px; font-size:14px; line-height:42px;}
+#login ul li { _height:42px; position:relative;}
+#login .inp_tex1 { width:244px; height:31px; background:url(../images/login_bj01.png) 0 0 no-repeat; border:0; line-height:29px; padding:0 0 0 34px;}
+#login .inp_tex1_f { width:244px; height:31px; background:url(../images/login_bj01.png) 0 -40px no-repeat; border:0; line-height:29px; padding:0 0 0 34px;}
+#login .inp_tex2 { width:244px; height:31px; background:url(../images/login_bj01.png) 0 -80px no-repeat; border:0; line-height:29px; padding:0 0 0 34px;}
+#login .inp_tex2_f { width:244px; height:31px; background:url(../images/login_bj01.png) 0 -120px no-repeat; border:0; line-height:29px; padding:0 0 0 34px;}
+#login .inp_tex3 { width:88px; height:31px; background:url(../images/login_bj01.png) 0 -160px no-repeat; border:0; line-height:29px; padding:0;}
+#login .inp_tex3_f { width:88px; height:31px; background:url(../images/login_bj01.png) 0 -200px no-repeat; border:0; line-height:29px; padding:0;}
+.li_btn span{ display:block; float:left;}
+.li_btn img{ display:block; float:left; margin:12px 6px 0 0; cursor:pointer;}
+.li_btn input{ display:block; float:left; margin:8px 6px 0 0;}
+.li_btn .btn1 { width:100px; height:38px; background:url(../images/login_bj01.png) 0 -240px no-repeat; border:0; cursor:pointer; margin:4px 0 0 0;}
+.li_btn .btn1_m { width:100px; height:38px; background:url(../images/login_bj01.png) -100px -240px no-repeat; border:0; cursor:pointer; margin:4px 0 0 0;}
+.tis1 { position:absolute; top:-30px; left:60px; font-size:12px; color:#f00;}
